@@ -212,10 +212,19 @@ html {
 
 @media (max-width: 767px) {
     .c-screencast{
-        height: 16rem;
+        height: 12rem;
         float: none;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 0rem; 
+    }
+}
+@media (max-width: 1024px) {
+    .c-screencast{
+        height: 14rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -3rem;
         margin-top: 0rem; 
     }
 }
@@ -238,6 +247,22 @@ html {
 .c-features__title{
     font-size: 3rem;
     font-weight: 700;
+}
+
+
+@media (max-width: 767px) {
+    .c-features{
+        margin-top: 16rem;
+    }
+}
+@media (max-width: 1024px) {
+    .c-screencast{
+        height: 14rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -3rem;
+        margin-top: 0rem; 
+    }
 }
 
 /*
@@ -278,7 +303,7 @@ html {
     height: 10rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
     .c-features-container{
         flex-direction: column;
         align-items: center;
@@ -330,7 +355,7 @@ html {
     font-weight: 700;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
     .c-discover-container{
         flex-direction: column;
         align-items: center;
@@ -425,6 +450,13 @@ content: '✓ ';
     color: var(--global-color-neutral-x-light)
 }
 
+@media (max-width: 1024px) {
+    .c-pricing-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 
 /*
     Component: Footer
@@ -457,6 +489,12 @@ content: '✓ ';
     flex-direction: row;
     width: 40%;
     justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+    .c-about{
+        display: none;
+    }
 }
 
 /*------------------------------------*\
