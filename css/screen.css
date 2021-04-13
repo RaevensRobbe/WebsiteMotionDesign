@@ -1,0 +1,805 @@
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* typography */
+    --global-root-font-size: 16;
+
+    /* colors */
+    --global-color-alpha: #1DB954;
+
+    --global-color-beta: #1ED760;
+
+    --global-color-neutral-xx-light: #FFFFFF;
+    --global-color-neutral-x-light: #FDFDFD;
+    --global-color-neutral-light: #b3b3b3;
+    --global-color-neutral-x-dark: #535353;
+    --global-color-neutral-xx-dark: #212121;
+    --global-color-neutral-xxx-dark: #121212;
+ 
+
+    /* Shadows */
+    --global-box-shadow: 0 0 0 1px rgba(0,0,0,.025), 0 2px 6px rgba(0,0,0,.05);
+    --global-box-shadow-lg: 0 0 0 1px rgba(0,0,0,.025), 0 2px 10px rgba(0,0,0,.1);
+
+    --global-input-shadow: 0 2px 3px rgba(0,0,0,.05);
+    --global-input-focus-shadow: 0 0 5px var(--global-color-alpha-light);
+
+    /* radius */
+    --global-borderRadius: calc(4rem / var(--global-root-font-size));
+
+    /* Whitespace */    
+    /* 
+        global font-size = 15px
+        baseline = 5px        
+        15px = 1rem
+        5px = 1rem/3
+        This would equal to 0.3333333...rem but let the browser do the math
+    */
+    --global-baseline: calc(1rem / 3); 
+    --global-whitespace-xxs: var(--global-baseline); /* = 5px */
+    --global-whitespace-xs: calc(var(--global-baseline) * 2); /* = 10px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 3); /* = 15px */
+    --global-whitespace-md: calc(var(--global-baseline) * 4); /* = 20px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 5); /* = 25px */
+    --global-whitespace-xl: calc(var(--global-baseline) * 6); /* = 30px */
+
+    /* transitions */
+    --global-transition-alpha: .2s;
+	--global-transition-beta: 1s;
+
+    --pi: 3.14159265359;
+}
+
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: var(--global-root-font-size);
+    line-height: 1.5;
+    font-family: "proxima-nova", sans-serif;
+    color: #202024;
+    background-color: var(--global-color-neutral-x-light);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    margin: 0;
+    /* font-size: 15px; */
+    font-size: 1rem;
+    height: 50px;
+    width: 150px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* letter-spacing: 2px; */
+    letter-spacing: 0.13333333em; /* = 2px */
+    line-height: var(--global-whitespace-md);
+    color: #fff;
+}
+
+/*
+    Component: Header
+    ---
+    Website main header
+*/
+
+.c-header {
+    Background: var(--global-color-neutral-xxx-dark);
+}
+
+.c-header-display{
+    padding:1rem;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.c-signup{
+    display: inline-block;
+    color:var(--global-color-neutral-x-light); 
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0.75rem;
+}
+
+.c-login{
+    display: inline-block;
+    cursor: pointer;
+    color: var(--global-color-alpha);
+    font-weight: 700;
+    padding: 0.75rem;
+}
+
+@media (max-width: 767px) {
+    .c-login {
+        display: none;
+    }
+    .c-signup {
+        display: none;
+    }
+}
+/*
+    Component: main
+    ---
+    Website main 
+*/
+
+.c-main{
+    background-color: var(--global-color-neutral-xx-dark);
+    height: 60vh;
+}
+
+.c-main__title{
+    color: var(--global-color-neutral-x-light);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.c-main__subtitle{
+    color: var(--global-color-neutral-light);
+    width: 80%;
+}
+
+.c-main-display{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 60vh;
+}
+.c-main__columns{
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .c-main-display{
+        width: 100%;
+    }
+}
+
+/*
+    Component: Button
+    ---
+    Website Button
+*/
+.c-button{
+    font-size: 1rem;
+    background-color: var(--global-color-alpha);
+    display: inline-block;
+    border-radius: 100px;
+    font-weight: 700;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.75rem 2rem;
+    color: var(--global-color-neutral-x-light)
+}
+
+/*
+    Component: Screencast
+    ---
+    Website Screencast
+*/
+.c-screencast__container{
+    position: relative;
+}
+.c-screencast{
+    height: 16rem;
+    float: right;
+    margin-top: -7rem; 
+    border-radius: 1rem;
+}
+
+@media (max-width: 767px) {
+    .c-screencast{
+        height: 16rem;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0rem; 
+    }
+}
+
+/*
+    Component: Features
+    ---
+    Website Product Features 
+*/
+.c-features{
+    margin-top: 11rem;
+}
+
+.c-features-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.c-features__title{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/*
+    Component: Cards
+    ---
+    Website Product Features cards
+*/
+
+.c-card{
+    background-color: var(--global-color-beta); /* als de browser geen gradients aankan*/
+    background-image: linear-gradient(0deg, var(--global-color-alpha), var(--global-color-beta));
+    height: 20rem;
+    width: 15rem;
+    border-radius: 10%;
+    margin: 1rem;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--global-color-neutral-x-light);
+}
+
+.c-card__second{
+    background-color: var(--global-color-beta); /* als de browser geen gradients aankan*/
+    background-image: linear-gradient(0deg, var(--global-color-neutral-xxx-dark), var(--global-color-neutral-x-dark));
+}
+
+.c-card__title{
+    font-weight: 700;
+}
+
+.c-card__description{
+    font-weight: lighter;
+}
+
+@media (max-width: 767px) {
+    .c-features-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*
+    Component: Discover
+    ---
+    Website Discover section
+*/
+
+.c-discover{
+    margin-top: 3rem;
+    padding: 3rem 0;
+    background-color: var(--global-color-neutral-xxx-dark);
+    color: var(--global-color-neutral-x-light);
+    text-align: left;
+}
+
+.c-discover--second{
+    margin-top: 0rem;
+    padding: 3rem 0;
+    background-color: var(--global-color-neutral-x-light);
+    color: var(--global-color-neutral-xxx-light);
+    text-align: right;
+}
+
+.c-discover-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: center;
+}
+
+.c-discover__display{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.c-discover__image{
+    height: 20rem;
+}
+
+.c-discover__title{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    .c-discover-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*
+    Component: Pricing
+    ---
+    Website pricing section
+*/
+  
+ul li:before {
+content: '✓ ';
+}
+
+.c-pricing{
+    background-color: var(--global-color-neutral-xx-dark);
+    color: var(--global-color-neutral-x-light);
+    padding: 1rem 0;
+
+}
+
+.c-pricing__title{
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.c-pricing-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.c-pricing-card{
+    background-color: var(--global-color-beta); /* als de browser geen gradients aankan*/
+    background-image: linear-gradient(0deg, var(--global-color-alpha), var(--global-color-beta));
+    height: 22rem;
+    width: 15rem;
+    border-radius: 10%;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: Left;
+    justify-content: space-evenly;
+    color: var(--global-color-neutral-x-light);
+}
+
+.c-pricing-card__second{
+    background-color: var(--global-color-beta); /* als de browser geen gradients aankan*/
+    background-image: linear-gradient(0deg, var(--global-color-neutral-xxx-dark), var(--global-color-neutral-x-dark));
+}
+
+.c-pricing-card__title{
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.c-pricing--price{
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+
+.c-pricing--inline{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.c-pricing__ul{
+    all: unset;
+    list-style: none;
+}
+
+.c-pricing__ul-grey{
+    color: var(--global-color-neutral-light);
+}
+
+.c-pricing__button{
+    font-size: 1rem;
+    background-color: none;
+    border: 1px solid var(--global-color-neutral-x-light);
+    display: inline-block;
+    border-radius: 100px;
+    font-weight: 700;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.75rem 2rem;
+    color: var(--global-color-neutral-x-light)
+}
+
+
+/*
+    Component: Footer
+    ---
+    Website Footer
+*/
+
+.c-footer {
+    background-color: var(--global-color-neutral-xxx-dark);
+}
+
+.c-footer-display{
+    padding:1rem;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.c-footer-group{
+    display: flex;
+    flex-direction: row;
+}
+.c-about{
+    margin-left: 1rem;
+    color: var(--global-color-neutral-x-light);
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-between;
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+.u-container{
+    max-width: 65%;
+    margin: 0 auto;
+}
+@media (max-width: 767px) {
+    .u-container{
+        max-width: 100%;
+        margin: auto;
+    }
+}
+
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-neutral {
+    color: var(--global-color-neutral);
+}
+
+.u-color-neutral-dark {
+    color: var(--global-color-neutral-dark);
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xxs {
+    margin-bottom: var(--global-whitespace-xxs) !important;
+}
+
+.u-mb-xs {
+    margin-bottom: var(--global-whitespace-xs) !important;
+}
+
+.u-mb-sm {
+    margin-bottom: var(--global-whitespace-sm) !important;
+}
+
+.u-mb-md {
+    margin-bottom: var(--global-whitespace-md) !important;
+}
+
+.u-mb-lg {
+    margin-bottom: var(--global-whitespace-lg) !important;
+}
+
+.u-mb-xl {
+    margin-bottom: var(--global-whitespace-xl) !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+    max-width: 27em !important;
+}
+
+.u-max-width-sm {
+    max-width: 39em !important;
+}
+
+.u-max-width-md {
+    max-width: 50em !important;
+}
+
+.u-max-width-lg {
+    max-width: 63.5em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+
+/*
+    Utilities: align
+    ---
+    Utility classes align text or components
+*/
+
+.u-align-text-center {
+    text-align: center;
+}
+
+.u-align-center {
+    margin: 0 auto;
+}
+
+/*
+    Utilities: text
+    Utility classes to create smaller or bigger test
+*/
+
+.u-text-xs {
+    font-size: calc(11rem / var(--global-root-font-size));
+}
+
+.u-text-sm {
+    font-size: calc(13rem / var(--global-root-font-size));
+    line-height: calc(var(--global-baseline) * 4);
+}
+
+/*
+    Utilities: span
+    Utility classes to span grid items across the x and y axis
+*/
+
+/* x: horizontal */
+
+@media (min-width: 62em) {
+
+    .u-x-span-3-bp3 {
+        grid-column: span 3;
+    }
+
+    .u-x-span-4-bp3 {
+        grid-column: span 4;
+    }
+
+    .u-x-span-6-bp3 {
+        grid-column: span 6;
+    }
+
+    .u-x-span-8-bp3 {
+        grid-column: span 8;
+    }
+
+    .u-x-span-9-bp3 {
+        grid-column: span 9;
+    }
+
+}
+
+/* y: vertical */
+
+@media (min-width: 62em) {
+
+    .u-y-span-2-bp3 {
+        grid-row: span 2;
+    }
+
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    position: relative;
+    padding: var(--global-whitespace-lg) var(--global-whitespace-lg) var(--global-baseline);
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 78em; /* 78 * 15px = 1170 */
+    width: 100%;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 62em and up)
+@media (min-width: 62em) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
