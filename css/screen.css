@@ -88,8 +88,7 @@ html {
     margin: 0;
     /* font-size: 15px; */
     font-size: 1rem;
-    height: 50px;
-    width: 150px;
+    width: 130px;
     font-weight: bold;
     text-transform: uppercase;
     /* letter-spacing: 2px; */
@@ -109,7 +108,7 @@ html {
 }
 
 .c-header-display{
-    padding:1rem;
+    padding:0.75rem;
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -273,6 +272,10 @@ html {
 
 .c-card__description{
     font-weight: lighter;
+}
+
+.c-animatie{
+    height: 10rem;
 }
 
 @media (max-width: 767px) {
