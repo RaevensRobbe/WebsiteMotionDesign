@@ -225,7 +225,8 @@ html {
 
 @media (max-width: 1024px) {
     .c-screencast{
-        height: 14rem;
+        height: 10rem;
+        width: 100vw;
         margin-left: auto;
         margin-right: auto;
         float: left;
