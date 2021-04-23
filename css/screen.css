@@ -218,9 +218,9 @@ html {
     position: relative;
 }
 .c-screencast{
-    height: 22rem;
+    height: 30rem;
     float: right;
-    margin-top: -7rem; 
+    margin-top: -9rem; 
     border-radius: 1rem;
 }
 
@@ -242,7 +242,8 @@ html {
     Website Product Features 
 */
 .c-features{
-    margin-top: 11rem;
+    margin-top: 22rem;
+    margin-bottom: 8rem;
 }
 
 .c-features-container{
@@ -281,14 +282,15 @@ html {
 .c-card{
     background-color: var(--global-color-beta); /* als de browser geen gradients aankan*/
     background-image: linear-gradient(0deg, var(--global-color-alpha), var(--global-color-beta));
-    height: 20rem;
-    width: 15rem;
+    height: 25rem;
+    width: 17.5rem;
     border-radius: 15px;
     margin: 1rem;
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     color: var(--global-color-neutral-x-light);
     box-shadow: rgb(0 0 0 / 30%) 0px 0px 8px;
@@ -326,8 +328,8 @@ html {
 */
 
 .c-discover{
-    margin-top: 3rem;
-    padding: 3rem 0;
+
+    padding: 8rem 0;
     background-color: var(--global-color-neutral-xxx-dark);
     color: var(--global-color-neutral-x-light);
     text-align: left;
@@ -335,7 +337,7 @@ html {
 
 .c-discover--second{
     margin-top: 0rem;
-    padding: 3rem 0;
+    padding: 8rem 0;
     background-color: var(--global-color-neutral-x-light);
     color: var(--global-color-neutral-xxx-light);
     text-align: right;
@@ -400,12 +402,15 @@ content: '✓ ';
     font-weight: 700;
     font-size: 3rem;
     text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
 }
 
 .c-pricing-container{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 8rem;
 }
 
 .c-pricing-card{
